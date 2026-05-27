@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1 id="welcome"></h1>
+
+<div class="top-bar">
+
+    <a href="/expenses-page" class="manage-link">
+        Manage Expenses
+    </a>
+
+    <button onclick="logout()" class="logout-btn">
+        Logout
+    </button>
+
+</div>
+
+<div class="summary-grid">
+
+    <div class="card">
+        <h3>Total Expenses</h3>
+        <p id="expenseCount"></p>
+    </div>
+
+    <div class="card">
+        <h3>Total Spent</h3>
+        <p id="totalSpent"></p>
+    </div>
+
+    <div class="card">
+        <h3>Highest Expense</h3>
+        <p id="highestExpense"></p>
+    </div>
+
+</div>
+
+<div id="categoryBreakdown"></div>
+
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

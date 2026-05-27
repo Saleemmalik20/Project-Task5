@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenses</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Expense Manager</h2>
+
+
+<form id="expenseForm">
+
+    <input type="text" id="title" placeholder="Title" required>
+
+    <input type="number" id="amount" placeholder="Amount" required>
+
+    <select id="category">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Health</option>
+        <option>Education</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <input type="text" id="note" placeholder="Note">
+
+    <button class="expsave-btn" type="submit">Save Expense</button>
+
+</form>
+
+<hr>
+<div class="filter-bar">
+
+    <select id="filterCategory">
+
+        <option value="">All Categories</option>
+
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Health">Health</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+
+    </select>
+
+    <input type="date" id="fromDate">
+
+    <input type="date" id="toDate">
+
+    <button onclick="applyFilters()" class="filter-btn">
+        Filter
+    </button>
+
+    <button onclick="resetFilters()" class="reset-btn">
+        Reset
+    </button>
+
+</div>
+<table>
+
+<thead>
+<tr>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Category</th>
+    <th>Date</th>
+    <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="expenseTable"></tbody>
+
+</table>
+
+<button class="expenses-btn" onclick="goToDashboard()">Return to Dashboard</button>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
