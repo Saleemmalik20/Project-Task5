@@ -1,0 +1,34 @@
+3. Write-up answering these questions:
+      – What is a foreign key and what does ON DELETE CASCADE do
+        in your expenses table?
+      – How does your backend make sure User A cannot see
+        User B's expenses?
+      – What SQL query did you use for the category summary
+        on the dashboard? Write it out.
+      – What was the hardest part of this task and how did you solve it?
+
+
+
+-Foreign Key is a constraint that creates a relationship between two tables.  
+  It will Link to another table with primary key as a constraint.
+- ON DELETE CASCADE is a sql constraint where if we delete any row in a table and its corresponding table row also will be deleted.
+  In this it will deletes all expenses related to a user when that user account is deleted.
+
+
+-Backend use session based system to verify if the user is log-in or not.  
+  Whenever we have to add,delete,modify and edit the expenses, firstly backend will check for the log-in user and stored its user-id through Sql query.
+  so, it will not possible for one user to access another user expenses.
+
+
+- SELECT category, SUM(amount) AS total
+  FROM expenses
+  WHERE user_id = %s
+  GROUP BY category
+  ORDER BY total DESC;
+
+- Hardest Part was Establishing secure connection Frontend and to the Backend Properly and another thing is that verifing that the one
+  user not able to check another user expenses.
+  Routing to Pages like expenses.htmtl to "expenses-page" using flask @route.
+  I have solved the user aunthenication problem with Flask session to store log-in user-ID. So that it will verify the details in SQL 
+  through User-Id and checked the loggin user.
+  
